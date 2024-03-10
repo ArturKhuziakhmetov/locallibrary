@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
 <head>
 
 {% block title %}
@@ -32,6 +32,7 @@ integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEw
 <ul class="sidebar-nav">
   {% if user.is_authenticated %}
     <li>User: {{ user.get_username }}</li>
+    <li><a href="{% url 'my-borrowed' %}">My Borrowed</a></li>
     <li>
        <form id="logout-form" method="post" action="{% url 'logout' %}">
          {% csrf_token %}
